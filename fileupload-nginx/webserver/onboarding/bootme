@@ -1,0 +1,12 @@
+echo "APP=$APP" > /APP
+echo "SITE=$SITE" >> /APP
+
+( cd /;git clone https://github.com/prod-2bees/runme.git;chmod -R +x /runme )
+( cd /home;git clone https://github.com/users-2b/www.git www;chown -R www-data: www )
+
+( crontab -u www-data /home/www/shared/cron-entry )
+( crontab -u root /onboarding/root-cron )
+( cd /var;chown -R www-data: upload )
+
+/usr/sbin/nginx &
+/usr/sbin/cron -f

@@ -1,0 +1,1 @@
+* * * * *       [ -x /runme/checkme ] && ( /runme/checkme ) > /var/log/root-cron.log 2>&1 &

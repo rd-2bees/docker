@@ -1,0 +1,5 @@
+docker run --name mandible \
+  -v `pwd`/mandible:/etc/mandible \
+  -d -p 8080:8080 2beesadmin/mandible
+
+docker exec -it mandible bash
